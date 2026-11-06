@@ -1,5 +1,4 @@
-﻿using System;
-using System.Xml.Schema;
+using System;
 
 
 //soal 1
@@ -43,7 +42,8 @@ class PaketMBG
     }
     void KurangiStok(int jumlah)
     {
-        stokDapur = jumlah;
+        int stok = stokDapur - jumlah;
+        Console.WriteLine("Stok dapur setelah dikurangi: " + stok);
     }
     public void main()
     {
@@ -56,11 +56,50 @@ class PaketMBG
 
 //soal 3
 
-class PaketReguler: PaketMBG
+class PaketReguler : PaketMBG
 {
-    String idPaket;
-    string namaPaket;
-    int stokDapur;
+    public void main()
+    {
+        Console.WriteLine("Paket makanan bergizi dengan harga Rp15.000 per paket");
+    }
+    class Paketkhusus : PaketMBG
+    {
+        public void main()
+        {
+            Console.WriteLine("Paket makanan dengan harga Rp20.000 per paket");
+        }
+    }
+
+
+
+    //soal 4
+
+    void hitungbiaya(int jumlah)
+    {
+        int hargaReguler = 15000;
+        int hargaKhusus = 20000;
+        int total = jumlah * hargaKhusus;
+        int total1 = jumlah * hargaReguler;
+        Console.WriteLine("Total biaya: " + total);
+        Console.WriteLine("Total biaya reguler: " + total1);
+    }
+}
+
+
+//soal 5
+abstract class paketMBG
+{
+    
+
+}
+
+
+
+//soal 6
+
+interface DapatDidistribusikan
+{
+
 }
 
 
